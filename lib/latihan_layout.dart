@@ -68,8 +68,11 @@ class layout extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          Image.asset('assets/images/lake.jpg',
-              width: 600, height: 240, fit: BoxFit.cover),
+          Image.asset(
+              'asset/images/pizza.jpg',
+              width: 600,
+              height: 240,
+              fit: BoxFit.cover),
           titleSection,
           buttonSection,
           textSection,

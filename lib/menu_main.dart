@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'add_interactivity.dart';
+import 'better_help.dart';
 import 'latihan_layout.dart';
 
 class MenuPage extends StatefulWidget {
@@ -10,6 +11,7 @@ class MenuPage extends StatefulWidget {
 }
 
 class _MenuPageState extends State<MenuPage> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +25,7 @@ class _MenuPageState extends State<MenuPage> {
             ElevatedButton(onPressed: (){
               Navigator.of(context).push(
                 MaterialPageRoute(
-                  builder: (context) =>  layout(),
+                  builder: (context) =>  const layout(),
                 ),
               );
             }, child: Text('Latihan Layout')),
@@ -31,10 +33,18 @@ class _MenuPageState extends State<MenuPage> {
             ElevatedButton(onPressed: (){
               Navigator.of(context).push(
                 MaterialPageRoute(
-                  builder: (context) =>  interaksi(),
+                  builder: (context) =>  const interaksi(),
                 ),
               );
-            }, child: Text('Latihan Interactivity'))
+            }, child: Text('Latihan Interactivity')),
+
+            ElevatedButton(onPressed: (){
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) =>  const home(),
+                ),
+              );
+            }, child: Text('Latihan Membuat Aplikasi Menu'))
           ],
         ),
       ),
