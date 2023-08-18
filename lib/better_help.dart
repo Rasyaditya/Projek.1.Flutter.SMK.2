@@ -9,7 +9,7 @@ class home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromRGBO(246, 167, 74, 1),
-      appBar: AppBar(title: const Text('Get Better Help!')),
+      // appBar: AppBar(title: const Text('Get Better Help!')),
       body: Center(
         child: (Column(
           mainAxisAlignment: MainAxisAlignment.center,

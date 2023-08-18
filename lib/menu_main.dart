@@ -20,7 +20,7 @@ class _MenuPageState extends State<MenuPage> {
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             ElevatedButton(onPressed: (){
               Navigator.of(context).push(

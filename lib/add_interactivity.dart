@@ -64,7 +64,7 @@ class interaksi extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          Image.asset('assets/images/lake.jpg',
+          Image.asset('images/pizza.jpg',
               width: 600, height: 240, fit: BoxFit.cover),
           titleSection,
           buttonSection,

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:projek_1/menu_main.dart';
 
+import 'Curriculum Vitae.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Project',
-      home:MenuPage(),
+      home:CV(),
     );
   }
 }

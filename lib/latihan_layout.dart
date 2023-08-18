@@ -69,7 +69,7 @@ class layout extends StatelessWidget {
       body: ListView(
         children: [
           Image.asset(
-              'asset/images/pizza.jpg',
+              'images/pizza.jpg',
               width: 600,
               height: 240,
               fit: BoxFit.cover),
