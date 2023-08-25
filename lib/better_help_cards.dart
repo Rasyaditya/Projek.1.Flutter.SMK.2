@@ -32,38 +32,38 @@ class bt_cards extends StatelessWidget {
             // const SizedBox(height: 16), // Adds vertical spacing between widgets
 
             ElevatedButton(
-                style: ElevatedButton.styleFrom(
+              style: ElevatedButton.styleFrom(
                 minimumSize: Size(300, 50),
                 primary: Color.fromRGBO(219, 148, 67, 1),
                 elevation: 0,
-                ),
-                onPressed: (){
+              ),
+              onPressed: (){
                 Navigator.of(context).push(
-                MaterialPageRoute(
-                builder: (context) => const CV(),
-                ),
+                  MaterialPageRoute(
+                    builder: (context) => const CV(),
+                  ),
                 );
-                },
-                child: Text('Best places to rest'),
-                ),
+              },
+              child: Text('Best places to rest'),
+            ),
 
                 // const SizedBox(height: 16), // Adds vertical spacing between widgets
 
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
+            ElevatedButton(
+                style: ElevatedButton.styleFrom(
                   minimumSize: Size(300, 50),
                   primary: Color.fromRGBO(219, 148, 67, 1),
                   elevation: 0,
-                  ),
-                  onPressed: (){
+                ),
+                onPressed: (){
                   Navigator.of(context).push(
-                  MaterialPageRoute(
-                  builder: (context) => const CV(),
-                  ),
+                    MaterialPageRoute(
+                      builder: (context) => const CV(),
+                    ),
                   );
-                  },
-                  child: Text('Look into Therapists')
-                )
+                },
+                child: Text('Look into Therapists')
+            )
 
           ],
         ),

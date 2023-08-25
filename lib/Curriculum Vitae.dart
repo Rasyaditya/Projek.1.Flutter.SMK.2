@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-class CV extends StatelessWidget {
+class CV extends StatefulWidget {
   const CV({super.key});
 
-  void dropdownMethod(String? selectedValue) {
-    if (selectedValue is String){
-      setState((){
-        _dropdownValue = selectedValue;
-      });
-    }
-  }
+  @override
+  State<CV> createState() => _CVState();
+}
+
+class _CVState extends State<CV> {
+
+  String dropdownValue_Jurusan = "RPL";
+  String dropdownValue_Kelas = "10";
 
   @override
   Widget build(BuildContext context) {
@@ -31,12 +33,16 @@ class CV extends StatelessWidget {
               constraints: new BoxConstraints(
                 minHeight: 5.0,
                 minWidth: double.infinity,
-                maxHeight: 1000 - 559,
+                maxHeight: double.infinity,
               ),
+              padding: EdgeInsets.all(16.0),
               color: Color.fromRGBO(102, 153, 162, 1),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
+                    padding: EdgeInsets.all(5.0),
                     child: Column(
                       children: [
                         Text(
@@ -62,6 +68,7 @@ class CV extends StatelessWidget {
                   ),
 
                   Container(
+                    padding: EdgeInsets.all(5.0),
                     child: Column(
                       children: [
                         Text(
@@ -74,6 +81,10 @@ class CV extends StatelessWidget {
                         SizedBox(
                           width: 500,
                           child: TextField(
+                            keyboardType: TextInputType.number,
+                            inputFormatters: <TextInputFormatter>[
+                              FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
+                            ],
                             decoration: InputDecoration(
                               border: OutlineInputBorder(),
                               hintText: 'Isi Dengan ID Yang Disedia',
@@ -87,6 +98,7 @@ class CV extends StatelessWidget {
                   ),
 
                   Container(
+                    padding: EdgeInsets.all(5.0),
                     child: Column(
                       children: [
                         Text(
@@ -99,7 +111,11 @@ class CV extends StatelessWidget {
                         SizedBox(
                           width: 500,
                           child: TextField(
-                            decoration: InputDecoration(
+                              keyboardType: TextInputType.number,
+                              inputFormatters: <TextInputFormatter>[
+                                FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
+                              ],
+                              decoration: InputDecoration(
                               border: OutlineInputBorder(),
                               hintText: 'Isi Dengan Nomor Telepon Anda',
                               filled: true,
@@ -107,20 +123,74 @@ class CV extends StatelessWidget {
                             ),
                           ),
                         ),
+                      ],
+                    )
+                  ),
 
-                        Container(
-                          child: Row(
-                            children: [
-                              DropdownButton(items: const [
-                                DropdownMenuItem(child: Text("RPL"), value: "rpl",),
-                                DropdownMenuItem(child: Text("AM"), value: "am",),
-                                DropdownMenuItem(child: Text("TKJ"), value: "tkj",),
-                              ], onChanged: dropdownMethod),
-                            ],
-                          )
-                        )
+                  Container(
+                    padding: EdgeInsets.all(5.0),
+                    width: 500,
+                    child: Row(
+                      children: [
+                        SizedBox(
+                          child: DropdownButton<String>(
+                            hint: Text("Pilih Jurusanmu"),
+                            value: dropdownValue_Jurusan,
+                            items: <String>['RPL', 'AM', 'TKJ'].map<DropdownMenuItem<String>>((String value) {
+                              return DropdownMenuItem<String>(
+                                value: value,
+                                child: Text(
+                                  value,
+                                  style: TextStyle(fontSize: 20),
+                                ),
+                              );
+                            }).toList(),
+                            onChanged: (String? newValue_jurusan) {
+                              setState(() {
+                                dropdownValue_Jurusan = newValue_jurusan!;
+                              });
+                            },
+                          ),
+                        ),
+
+                        SizedBox(width: 100),
+
+                        DropdownButton<String>(
+                        hint: Text("Pilih Jurusanmu"),
+                        value: dropdownValue_Kelas,
+                        items: <String>['10', '11', '12'].map<DropdownMenuItem<String>>((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(
+                          value,
+                          style: TextStyle(fontSize: 20),
+                        ),
+                      );
+                    }).toList(),
+                    onChanged: (String? newValue_kelas) {
+                      setState(() {
+                        dropdownValue_Kelas = newValue_kelas!;
+                      });
+                    },
+                  ),
                       ],
                     ),
+                  ),
+
+                  ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: Size(300, 50),
+                        backgroundColor: Color.fromRGBO(45, 74, 76, 1),
+                        elevation: 0,
+                      ),
+                      onPressed: (){
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => const CV(),
+                          ),
+                        );
+                      },
+                      child: Text('Make CV')
                   )
                 ],
               ),
@@ -131,3 +201,4 @@ class CV extends StatelessWidget {
     );
   }
 }
+
