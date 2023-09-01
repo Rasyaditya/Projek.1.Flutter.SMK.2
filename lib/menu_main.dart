@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'add_interactivity.dart';
 import 'better_help.dart';
+import 'GetX/getX.dart';
 import 'latihan_layout.dart';
 
 class MenuPage extends StatefulWidget {
@@ -44,7 +45,15 @@ class _MenuPageState extends State<MenuPage> {
                   builder: (context) =>  const home(),
                 ),
               );
-            }, child: Text('Latihan Membuat Aplikasi Menu'))
+            }, child: Text('Latihan Membuat Aplikasi Menu')),
+
+            ElevatedButton(onPressed: (){
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) =>  const getx_sim(),
+                ),
+              );
+            }, child: Text('Latihan GetX'))
           ],
         ),
       ),
