@@ -11,8 +11,7 @@ class getx_sim extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TapController controller = Get.put(TapController());
-
+  TapController controller = Get.find();
     return Scaffold(
       body: Container(
         width: double.maxFinite,

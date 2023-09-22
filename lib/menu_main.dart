@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'Pratekkan GetX/Data Penginapan Kucing/dashboard.dart';
 import 'add_interactivity.dart';
 import 'better_help.dart';
 import 'GetX/getX.dart';
@@ -22,7 +23,7 @@ class _MenuPageState extends State<MenuPage> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
+            children: [
             ElevatedButton(onPressed: (){
               Navigator.of(context).push(
                 MaterialPageRoute(
@@ -53,7 +54,15 @@ class _MenuPageState extends State<MenuPage> {
                   builder: (context) =>  const getx_sim(),
                 ),
               );
-            }, child: Text('Latihan GetX'))
+            }, child: Text('Latihan GetX')),
+
+              ElevatedButton(onPressed: (){
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) =>  const CatDashboard(),
+                  ),
+                );
+              }, child: Text('Praktek GetX')),
           ],
         ),
       ),
