@@ -19,8 +19,8 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       initialBinding: InitDep(),
       title: 'Flutter Project',
-      home:MenuPage(),
+      home: MenuPage(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
-
